@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text" data-src="images/img-1.jpg">burger</h1>
+  <h1 class="text" data-src="images/img-2.jpg">pizza</h1>
+  <h1 class="text" data-src="images/img-3.jpg">sandwich</h1>
+  <h1 class="text" data-src="images/img-4.jpg">noodles</h1>
+  <h1 class="text" data-src="images/img-5.jpg">ice-cream</h1>
+  <h1 class="text" data-src="images/img-6.jpg">cake</h1>
+  <img src="images/img-1.jpg" class="hover-img" alt="">
+</div>
+
+<script>
+
+let container = document.querySelector('.container');
+let img = container.querySelector('.hover-img');
+
+document.body.onmousemove = (e) =>{
+  let x = e.pageX;
+  let y = e.pageY;
+  img.style.top = y + 'px';
+  img.style.left = x + 'px';
+}
+
+container.querySelectorAll('.text').forEach(text =>{
+  text.onmousemove = () =>{
+    img.src = text.getAttribute('data-src');
+  }
+});
+
+</script>
+  
+</body>
+</html>
+
+
+<!-- Created By MS10 Developer -->
